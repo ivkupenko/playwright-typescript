@@ -1,0 +1,37 @@
+{
+  "name": "playwright-typescript-demo",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run pretest && dotenv -e ./envs/.env.dev -- npx playwright test --ui",
+    "test-headless": "npm run pretest && dotenv -e ./envs/.env.dev -- npx playwright test",
+    "pretest": "npm run prettier-format && npm run lint",
+    "lint": "eslint --max-warnings 10",
+    "prettier-format": "prettier --write \"./**/*.ts\" ",
+    "pretest-unix": "rimraf screenshots && rimraf reports",
+    "prebuild-unix": "rimraf build",
+    "build-unix": "npm run prebuild-unix && npm run pretest-unix"
+  },
+  "keywords": [],
+  "author": "Ihor Kupenko",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.10.10",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-playwright": "^2.2.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "3.4.2"
+  },
+  "dependencies": {
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "rimraf": "^6.0.1"
+  }
+}
