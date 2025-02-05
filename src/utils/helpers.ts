@@ -8,11 +8,12 @@ export abstract class Helpers {
   }
 
   async navigateTo(url: string): Promise<void> {
+    //url shoud be entered without baseURL part. Like '/product/
     await this.page.goto(url);
   }
 
   async openWebApp(): Promise<void> {
-    await this.navigateTo(process.env.BASE_URL!);
+    await this.page.goto('/');
   }
 
   async waitForPageLoad(): Promise<void> {
