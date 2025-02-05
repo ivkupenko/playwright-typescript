@@ -17,8 +17,10 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run lint
+        run: npm run build-unix
+      - name: Run Playwright tests on dev environment
+        run: dotenv -e ./envs/.env.dev -- npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
