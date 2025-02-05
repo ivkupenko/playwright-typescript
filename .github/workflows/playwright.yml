@@ -20,7 +20,7 @@ jobs:
       - name: Run lint
         run: npm run build-unix
       - name: Run Playwright tests on dev environment
-        run: dotenv -e ./envs/.env.dev -- npx playwright test
+        run: npx dotenv -e ./envs/.env.dev -- npx playwright test
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
