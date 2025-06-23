@@ -1,4 +1,4 @@
-import { BasePage } from './base-page';
+import { BasePage } from '../fixtures/base-page';
 import { Page, Locator } from '@playwright/test';
 
 export default class LoginPage extends BasePage {
@@ -13,6 +13,10 @@ export default class LoginPage extends BasePage {
     this.password = page.locator('[type="password"]');
     this.loginButton = page.locator('[type="submit"]');
     this.rememberMeCheckBox = page.locator('[name="user[remember_me]"]');
+  }
+
+  public getPage(): Page {
+    return this.page;
   }
 
   async login(userName = process.env.ADMIN_USER!, password = process.env.ADMIN_PASS!) {
