@@ -7,7 +7,7 @@ export abstract class BasePage {
     this.page = page;
   }
 
-  async navigateTo(url: string): Promise<Page> {
+  async navigateTo(url = process.env.BASE_URL!): Promise<Page> {
     // url should be entered without baseURL part. Like '/product/'
     await this.page.goto(url);
     return this.page;

@@ -1,4 +1,4 @@
-import { BasePage } from '../fixtures/base-page';
+import { BasePage } from '../../fixtures/base-page';
 import { Locator, Page } from '@playwright/test';
 
 export default class MainMenu extends BasePage {

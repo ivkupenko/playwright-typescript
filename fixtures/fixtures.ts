@@ -1,5 +1,5 @@
-import LoginPage from '../pages/login-page';
-import MainMenu from '../pages/main-menu';
+import LoginPage from '../support/pages/login-page';
+import MainMenu from '../support/pages/main-menu';
 import { test as base } from '@playwright/test';
 
 export const test = base.extend<{
